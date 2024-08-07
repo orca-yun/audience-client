@@ -1,0 +1,42 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.content {
+  display: flex;
+  flex: 1;
+  padding: 10px;
+  gap: 10px;
+  flex-grow: 0;
+
+  &.three-layout, &.normal {
+    .board {
+      flex: 1;
+      height: 100%;
+      background: #FAFAFA;
+      border-radius: 6px;
+    }
+
+    .compose-panel {
+      display: flex;
+      position: relative;
+      gap: 10px;
+      width: var(--chatpanel-width);
+      flex-direction: column;
+      border-radius: 10px;
+      height: calc(100vh - 90px);
+
+      .chat-panel {
+        height: calc(100% - 300px);
+      }
+    }
+  }
+
+  &.normal {
+
+  }
+}
+

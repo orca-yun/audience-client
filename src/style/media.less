@@ -1,0 +1,314 @@
+@media screen and (max-width: 768px) {
+  ::placeholder {
+    color: #ccc !important;
+  }
+
+  header {
+    height: 35px;
+    overflow: hidden;
+
+    h1 {
+      font-size: 16px;
+
+      .ant-image, img {
+        width: 20px !important;
+        height: 20px !important;
+        object-fit: contain !important;
+        border-radius: 50% !important;
+      }
+    }
+
+    .title {
+      flex: 1;
+      margin-left: 4px;
+
+      h3 {
+        font-size: 14px;
+        width: fit-content;
+        max-width: 180px;
+      }
+
+      span.audience-num {
+        font-size: 12px;
+
+        i {
+          width: 18px;
+          height: 18px;
+        }
+      }
+    }
+    &.fullscreen{
+      position: absolute;
+      z-index: 99;
+      width: 100%;
+      left: 0;
+      top: 0;
+      background: rgba(255, 255, 255, 0.4);
+      box-shadow: unset;
+      border: none;
+    }
+  }
+
+  .content {
+    padding: 0;
+    gap: 0;
+    flex-direction: column;
+    flex-shrink: 0;
+
+    .chat-toolbar {
+      box-sizing: border-box;
+      //padding-bottom: constant(safe-area-inset-bottom);
+      //padding-bottom: env(safe-area-inset-bottom);
+      background: unset;
+    }
+
+    &.normal {
+      height: calc(100vh - 35px);
+      flex: unset;
+
+      .player-wrap {
+        flex: unset;
+        width: 100%;
+        height: 240px;
+        border: none;
+        border-radius: 0;
+      }
+
+      // 二分屏 无课件
+      .chat-panel {
+        margin-top: 5px;
+        width: 100%;
+        flex: 1;
+
+        &__title {
+          display: none;
+        }
+      }
+
+      // 有课件
+      .compose-panel {
+        width: 100%;
+        border-radius: unset;
+        overflow: hidden;
+        height: calc(100vh - 35px);
+        gap: 5;
+
+        .chat-panel {
+          height: calc(100% - 240px);
+          margin-top: 0;
+          width: 100%;
+          border: none;
+          border-radius: 0;
+          padding: 0;
+
+          &__title {
+            display: none;
+          }
+        }
+
+        .chat-list {
+          padding: 20px 10px;
+          height: calc(100% - 28px);
+          box-sizing: border-box;
+        }
+
+        .chat-send-bar {
+          & > span[class^="ant-input"] {
+            background: #fff;
+            color: #333;
+            border: none;
+            border-radius: 18px;
+          }
+
+          input.ant-input {
+            color: #333;
+          }
+        }
+
+        .emotions-panel {
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+        }
+      }
+    }
+
+    &.fullscreen {
+      position: relative;
+      height: 100vh;
+      flex: unset;
+      overflow: hidden;
+      background: #000;
+
+      .player-wrap {
+        width: 100%;
+        flex: unset;
+        // height: calc(100vh - 50px);
+        border-radius: unset;
+        overflow: hidden;
+        background-color: #000;
+      }
+
+      .chat-panel {
+        position: absolute;
+        z-index: 29;
+        left: 0;
+        bottom: 0;
+        height: 34vh;
+        width: 100vw;
+        background: transparent;
+        color: #fff;
+        overflow: unset;
+
+        &__title {
+          display: none;
+        }
+      }
+
+      .chat-list {
+        width: 100%;
+      }
+
+      .chat-avatar {
+        display: none;
+      }
+
+      .chat-at {
+        display: none;
+      }
+
+      .chat-item {
+        width: fit-content;
+        max-width: 100%;
+        padding: 8px 12px;
+        border-radius: 4px;
+        background: rgba(70, 77, 87, 0.4);
+
+        .chat-content {
+          margin-left: 2px;
+          padding: 0;
+          background: unset;
+          box-shadow: unset;
+          border-radius: 0;
+          color: #fff;
+        }
+
+        .chat-quota-data {
+          margin-top: 5px;
+          margin-left: 20px;
+          line-height: 1.2;
+          color: #999;
+          font-size: 12px;
+          display: inline-block;
+          background-color: #f1eded;
+          padding: 5px 5px;
+          border-radius: 4px;
+        }
+      }
+
+      .chat-toolbar {
+        .chat-send-bar {
+          & > span[class^="ant-input"] {
+            background: rgba(70, 77, 87, 0.4);
+            border: none;
+            border-radius: 18px;
+          }
+
+          input.ant-input {
+            color: #fff;
+          }
+        }
+      }
+
+      .chat-item__mobile {
+        display: flex;
+        align-items: center;
+      }
+
+      .chat-item__name {
+        color: rgba(255, 255, 255, .6);
+      }
+
+      .gift-jelly {
+        width: 150px;
+        height: 150px;
+
+        img {
+          max-width: 300px !important;
+        }
+      }
+
+      .vjs-control-bar {
+        top: 35px;
+
+        // .tcp-video-quality-switcher {
+        //   position: absolute;
+        //   left: 10px;
+        //   top: 2px;
+        // }
+      }
+
+      .tcp-video-quality-switcher .vjs-menu {
+        top: 30px;
+      }
+
+      .vjs-menu-button-popup .vjs-menu .vjs-menu-content {
+        bottom: unset;
+      }
+
+      .ant-tabs-nav-wrap {
+        display: none;
+      }
+    }
+
+    &.three-layout {
+      flex-grow: 1 !important;
+
+      .board {
+        width: 100%;
+        aspect-ratio: 2/1;
+        flex: unset;
+        height: unset;
+        background: #FAFAFA;
+        border-radius: 0;
+      }
+
+      .compose-panel {
+        width: 100%;
+        gap: 0;
+        flex: 1;
+        border-radius: unset;
+
+        .player-wrap {
+          height: 220px;
+          flex: unset;
+          border-radius: 0;
+        }
+
+        .chat-panel {
+          width: 100%;
+          flex: 1;
+          max-height: calc(100vh - 455px);
+          overflow: unset;
+
+          &__title {
+            display: none;
+          }
+        }
+      }
+
+      .ant-tabs .real-tab-content {
+        flex-grow: 0;
+      }
+    }
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  .vjs-live-display {
+    display: none;
+  }
+}
